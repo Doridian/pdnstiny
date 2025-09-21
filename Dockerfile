@@ -17,8 +17,9 @@ RUN apk add --no-cache upx
 
 RUN mkdir -p /out && \
     find /usr/bin -type f -name '*pdns*' -print0 | cpio -0dmp /out && \
-    echo /usr/bin/rec_control /usr/bin/sqlite3 | cpio -dmp /out && \
     find /usr/sbin -type f -name '*pdns*' -print0 | cpio -0dmp /out && \
+    echo /usr/bin/sqlite3 | cpio -dmp /out && \
+    echo /usr/bin/rec_control | cpio -dmp /out && \
     find /out -type f -exec upx --best {} \;
 
 FROM base AS compressed
