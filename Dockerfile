@@ -24,8 +24,7 @@ RUN mkdir -p /out && \
 FROM base AS compressed
 
 COPY --from=compressor /out/ /
-RUN mv /etc/pdns /etc/pdns-stock && \
-    rm -f /etc/pdns-stock/*.conf-dist
+RUN rm -rf /etc/pdns
 
 FROM scratch AS default
 
@@ -33,4 +32,5 @@ COPY --from=compressed / /
 COPY rootfs/ /
 
 VOLUME ["/etc/pdns"]
+VOLUME ["/var/lib/powerdns"]
 ENTRYPOINT ["/entrypoint.sh"]
