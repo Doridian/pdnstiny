@@ -1,3 +1,3 @@
 #!/bin/sh
 
-exec /usr/sbin/pdns_server --launch=bind,lua2 --lua2-filename=/etc/pdns/powerdns-luabackend.lua --daemon=no --guardian=no --disable-syslog
+exec /usr/sbin/pdns_server --daemon=no --guardian=no --disable-syslog
