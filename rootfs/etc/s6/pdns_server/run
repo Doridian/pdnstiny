@@ -3,7 +3,7 @@ set -e
 
 mkdir -p /var/lib/powerdns
 if [ ! -f /var/lib/powerdns/bind-dnssec-db.sqlite3 ]; then
-    pdnsutil create-sqlite3-db /var/lib/powerdns/bind-dnssec-db.sqlite3
+    pdnsutil create-bind-db /var/lib/powerdns/bind-dnssec-db.sqlite3
 fi
 chown -R pdns:pdns /var/lib/powerdns
 chmod 700 /var/lib/powerdns
