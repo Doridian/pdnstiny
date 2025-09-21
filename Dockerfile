@@ -1,6 +1,15 @@
 FROM alpine:3.22 AS base
 
-RUN apk add --no-cache pdns-recursor pdns pdns-backend-bind pdns-backend-lua2 ca-certificates s6
+RUN apk add --no-cache \
+        ca-certificates \
+        pdns \
+        pdns-backend-bind \
+        pdns-backend-lua2 \
+        pdns-backend-pipe \
+        pdns-backend-remote \
+        pdns-backend-sqlite3 \
+        pdns-recursor \
+        s6
 
 FROM base AS compressor
 
