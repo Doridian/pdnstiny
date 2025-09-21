@@ -1,0 +1,4 @@
+#!/bin/sh
+
+mkdir -p /var/run/pdns-recursor
+exec /usr/sbin/pdns_recursor --daemon=no --disable-syslog
