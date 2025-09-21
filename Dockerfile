@@ -8,7 +8,7 @@ RUN apk add --no-cache \
         pdns-backend-pipe \
         pdns-backend-remote \
         pdns-backend-sqlite3 \
-        pdns-recursor \
+        pdns-recursor-luajit \
         s6
 
 FROM base AS compressor
