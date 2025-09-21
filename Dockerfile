@@ -6,7 +6,6 @@ RUN apk add --no-cache \
         pdns-backend-bind \
         pdns-backend-lua2 \
         pdns-backend-pipe \
-        pdns-backend-remote \
         pdns-backend-sqlite3 \
         pdns-recursor-luajit \
         s6

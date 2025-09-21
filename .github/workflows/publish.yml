@@ -3,6 +3,11 @@ on:
   push:
     branches:
       - main
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   push_to_registry:
     name: Push Docker image to GitHub Packages
