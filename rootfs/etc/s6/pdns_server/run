@@ -8,7 +8,7 @@ fi
 chown -R pdns:pdns /var/lib/powerdns
 chmod 700 /var/lib/powerdns
 
-chmod 755 /etc/pdns
-chmod 644 /etc/pdns/*
+find /etc/pdns -type d -exec chmod 755 {} \;
+find /etc/pdns -type f -exec chmod 644 {} \;
 
 exec /usr/sbin/pdns_server --daemon=no --guardian=no --disable-syslog
