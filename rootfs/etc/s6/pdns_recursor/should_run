@@ -1,0 +1,8 @@
+#!/bin/sh
+set -e
+
+cfg=/etc/pdns/recursor.conf
+if [ ! -f $cfg ]; then
+    echo "No $cfg found, not starting pdns_recursor"
+    exit 1
+fi
